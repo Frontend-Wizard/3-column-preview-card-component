@@ -38,14 +38,16 @@ body {
 	overflow-x: hidden;
 	min-width: 245px;
 	width: 100vw;
+	height: 100vh;
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	background-color: #f2f2f2;
 }
 
 main {
 	margin: 0 10px;
-    	margin-top: 171px;
+    margin-top: 42px;
 	width: 100%;
 	max-width: 920px;
 	display: grid;
@@ -60,17 +62,23 @@ main {
 }
 
 .card:first-of-type {
+	opacity: 0;
 	border-radius: 8px 0 0 8px;
 	background-color: #e28525;
+	animation: slideInLeft 1s 1 forwards;
 }
 
 .card:nth-of-type(2) {
+	opacity: 0;
 	background-color: #016972;
+	animation: slideInTop 1s 1 forwards 0.5s;
 }
 
 .card:last-of-type {
+	opacity: 0;
 	border-radius: 0 8px 8px 0;
 	background-color: #00403f;
+	animation: slideInRight 1s 1 forwards 1s;
 }
 
 .card h1 {
