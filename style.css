@@ -41,13 +41,12 @@ body {
 	height: 100vh;
 	display: flex;
 	justify-content: center;
-	align-items: center;
 	background-color: #f2f2f2;
 }
 
 main {
 	margin: 0 10px;
-    margin-top: 42px;
+    	margin-top: 171px;
 	width: 100%;
 	max-width: 920px;
 	display: grid;
