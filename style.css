@@ -1,0 +1,239 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+@keyframes slideInTop {
+	0% {
+		bottom: 120vw;
+	}
+	100% {
+		bottom: 0;
+		opacity: 1;
+	}
+}
+
+@keyframes slideInLeft{
+	0% {
+		right: 120vw;
+	}
+	100% {
+		right: 0;
+		opacity: 1;
+	}
+}
+
+@keyframes slideInRight {
+	0% {
+		left: 120vw;
+	}
+	100% {
+		left: 0;
+		opacity: 1;
+	}
+}
+
+body {
+    overflow: hidden;
+	min-width: 245px;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #f2f2f2;
+}
+
+main {
+	margin: 0 10px;
+	width: 100%;
+	max-width: 920px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	border-radius: 8px;
+}
+
+.card {
+	position: relative;
+	height: 500px;
+	padding: 48px;
+}
+
+.card:first-of-type {
+    opacity: 0;
+	border-radius: 8px 0 0 8px;
+	background-color: #e28525;
+	animation: slideInLeft 1s 1 forwards;
+}
+
+.card:nth-of-type(2) {
+    opacity: 0;
+	background-color: #016972;
+    animation: slideInTop 1s 1 forwards .5s;
+}
+
+.card:last-of-type {
+    opacity: 0;
+	border-radius: 0 8px 8px 0;
+	background-color: #00403f;
+    animation: slideInRight 1s 1 forwards 1s;
+}
+
+.card h1 {
+	margin-top: 35px;
+	margin-bottom: 25px;
+	font-family: "Big Shoulders Display";
+	font-style: normal;
+	font-weight: bold;
+	font-size: 40px;
+	line-height: 48px;
+	color: #f2f2f2;
+}
+
+.card p {
+	font-family: "Lexend Deca";
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
+	line-height: 1.67em;
+	letter-spacing: 0.002em;
+	color: rgba(255, 255, 255, 0.75);
+}
+
+.card button {
+	cursor: pointer;
+	margin-top: 83px;
+	width: 100%;
+	max-width: 146px;
+	height: 48px;
+	background-color: #f2f2f2;
+	border: 2px solid #f2f2f2;
+	border-radius: 24px;
+
+	font-family: "Lexend Deca";
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
+	line-height: 19px;
+}
+.card:first-of-type button {
+	color: #e28525;
+}
+
+.card:nth-of-type(2) button {
+	color: #016972;
+}
+
+.card:last-of-type button {
+	color: #00403f;
+}
+
+.card button:hover {
+	background-color: transparent;
+	color: #f2f2f2;
+}
+
+.attribution {
+	position: fixed;
+	z-index: 4;
+	bottom: 10px;
+	left: 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	font-size: 15px;
+
+	font-family: "Lexend Deca";
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+}
+
+.attribution p {
+	color: #e28525;
+}
+
+.attribution p:first-of-type {
+	margin-right: 0.4em;
+}
+
+.attribution a {
+	font-weight: bold;
+	color: #2b2b2b;
+	text-decoration: underline;
+	text-underline-offset: 1px;
+	text-decoration-style: wavy;
+}
+
+@media screen and (max-width: 900px) {
+	body {
+		width: auto;
+		height: auto;
+		padding: 40px 0;
+	}
+
+	main {
+		grid-template-columns: 1fr 1fr;
+		row-gap: 10px;
+		column-gap: 10px;
+	}
+
+	.card:last-of-type,
+	.card:nth-last-of-type(2) {
+		border-bottom-right-radius: 8px;
+	}
+
+	.attribution {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	body {
+		padding-bottom: 0;
+		flex-direction: column;
+	}
+
+	main {
+		margin: 0;
+		width: calc(100% - 1px);
+		height: min-content;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		row-gap: 0;
+	}
+
+	.card {
+		width: 87.2%;
+		max-width: 400px;
+		height: max-content;
+	}
+
+	.card:first-of-type {
+		border-radius: 8px 8px 0 0;
+	}
+
+	.card:nth-last-of-type(2) {
+		border-radius: 0;
+	}
+
+	.card:last-of-type {
+		border-radius: 0 0 8px 8px;
+	}
+
+	.attribution {
+		margin-top: 40px;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+	}
+}
+
+@media screen and (max-width: 300px) {
+	.card {
+		padding: 48px 28px;
+	}
+}
